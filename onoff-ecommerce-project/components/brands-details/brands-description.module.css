@@ -1,0 +1,42 @@
+.body__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    flex-direction: column;
+    width: 80%;
+    margin: 32px auto 0px auto;
+}
+
+.body__title {
+    margin-bottom: 16px;
+    font-size: 250%;
+}
+
+.body__content {
+    font-size: 200%;
+    width: 60%;
+    text-align: justify;
+    font-size: large;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+.img__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img__container img {
+    object-fit: contain;
+    width: 60%;
+    height: auto;
+}
+
+.onoff {
+    font-weight: 600;
+    font-style: bold;
+    font-size: 130%;
+    text-decoration: underline;
+}

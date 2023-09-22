@@ -1,0 +1,60 @@
+.container {
+  background-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)),
+    /* url("/images/hero/hero4.jpg"); */
+    url("https://static.nike.com/a/images/f_auto/dpr_1.3,cs_srgb/w_853,c_limit/f0c0fbe6-a338-4ef5-b563-ca96eecc4fe4/nike-just-do-it.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.content {
+  height: calc(100vh - 80px);
+  max-height: 100%;
+  padding: 0rem calc((100vw - 1500px) / 2);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  max-height: 100%;
+  padding: 0 2rem;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.items h1 {
+  margin-top: 8rem;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  margin-bottom: 1rem;
+  box-shadow: 1rem;
+  box-shadow: 3px 3px #099aee;
+  letter-spacing: 3px;
+}
+
+.items p {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  margin-bottom: 2rem;
+}
+
+.items button {
+  font-size: 1.4rem;
+  padding: 1rem 4rem;
+  border: none;
+  background: #099aee;
+  color: white;
+  transition: 0.2s ease-out;
+}
+
+.items button:hover {
+  opacity: 0.8;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}

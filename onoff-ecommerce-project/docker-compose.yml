@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  web:
+    image: "bpl:onoff-shop-dev"
+    build:
+      context: .
+    ports:
+      - 4060:80
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"

@@ -1,0 +1,51 @@
+.item {
+    text-decoration: none;
+    list-style: none;
+    margin: auto;
+    cursor: pointer;
+}
+
+.item__container {
+    margin-left: 3.2rem;
+}
+
+.image {
+    -webkit-transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+    -ms-transition: all 1.5s ease;
+    transition: all 1.5s ease;
+}
+
+.image:hover {
+    transform: scale(1.2);
+    opacity: 0.9;
+}
+
+.content__container {
+    text-align: center;
+}
+
+.content__brand {
+    text-transform: uppercase;
+    font-size: 80%;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.content__name {
+    letter-spacing: 1.5px;
+    font-size: 90%;
+    text-transform: uppercase;
+}
+
+.content__price {
+    margin-top: 0.5rem;
+    font-size: 90%;
+    margin-bottom: 2rem;
+    color: grey;
+    letter-spacing: 1.5px;
+}
+
+@media screen and (max-width: 1024px) {}

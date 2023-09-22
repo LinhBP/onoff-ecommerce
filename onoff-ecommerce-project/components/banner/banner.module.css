@@ -1,0 +1,39 @@
+.container {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 80%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  justify-content: space-around;
+}
+
+.content {
+  background-color: white;
+  padding: 20px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 280%;
+  margin-bottom: 5px;
+  color: #003366;
+}
+
+.title {
+  font-size: 130%;
+  margin-bottom: 5px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 130%;
+  text-align: center;
+  letter-spacing: 2px;
+}

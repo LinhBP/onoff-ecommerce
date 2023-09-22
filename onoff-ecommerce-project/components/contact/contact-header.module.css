@@ -1,0 +1,22 @@
+.header {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url("/images/hero/hero4.jpg");
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1 {
+  font-size: 400%;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px;
+}

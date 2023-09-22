@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model bill {
+  billid     Int          @id @default(autoincrement())
+  customerid Int?
+  date       DateTime?    @db.Date
+  totalprice Decimal?     @db.Decimal(10, 2)
+  customer   customer?    @relation(fields: [customerid], references: [customerid], onDelete: NoAction, onUpdate: NoAction)
+  billdetail billdetail[]
+}
+
+model billdetail {
+  billdetailid Int      @default(autoincrement())
+  billid       Int
+  shoesid      Int
+  price        Decimal? @db.Decimal(10, 2)
+  quantity     Int?
+  bill         bill     @relation(fields: [billid], references: [billid], onDelete: NoAction, onUpdate: NoAction)
+  shoes        shoes    @relation(fields: [shoesid], references: [shoesid], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([billdetailid, billid, shoesid])
+}
+
+model customer {
+  customerid Int     @id @default(autoincrement())
+  name       String? @db.VarChar(40)
+  age        Int?
+  gender     String? @db.VarChar(10)
+  tel        String? @db.VarChar(15)
+  email      String? @db.VarChar(40)
+  bill       bill[]
+}
+
+model shoes {
+  shoesid             Int                   @id @default(autoincrement())
+  name                String?               @db.VarChar(40)
+  brand               String?               @db.VarChar(20)
+  size                String?               @db.Text()
+  color               String?               @db.VarChar(200)
+  type                String?               @db.Text()
+  gender              String?               @db.Text()
+  price               Decimal?              @db.Decimal(10, 2)
+  image               String?               @db.Text()
+  stripeid            String?               @db.VarChar
+  detail              String?               @db.Text()
+  billdetail          billdetail[]
+  related_image_shoes related_image_shoes[]
+}
+
+model related_image_shoes {
+  related_image_shoesid Int     @id @default(autoincrement())
+  shoesid               Int
+  image                 String? @db.VarChar(300)
+  shoes                 shoes   @relation(fields: [shoesid], references: [shoesid], onDelete: NoAction, onUpdate: NoAction)
+}

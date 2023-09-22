@@ -1,0 +1,37 @@
+.cart__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* width: 60%; */
+    margin: 0 auto;
+    box-shadow: 0 1px 10px grey;
+}
+
+.cart__header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: black;
+    color: white;
+}
+
+.cart__list li {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.cart__list li p {
+    text-align: center;
+}
+
+.empty {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1024px) {
+    .cart__header p {
+        font-size: 1rem;
+    }
+}

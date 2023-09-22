@@ -1,0 +1,53 @@
+.big_title {
+  font-size: 300%;
+  color: #003366;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 80%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  justify-content: space-around;
+}
+
+.content {
+  background-color: white;
+  padding: 20px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 250%;
+  margin-bottom: 5px;
+  color: #003366;
+}
+
+.title {
+  font-size: 120%;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 130%;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.subtitle p {
+  margin-bottom: 2px;
+}

@@ -1,0 +1,81 @@
+.container {
+    position: fixed;
+    top: 0;
+    margin-top: 10%;
+    margin-left: 60%;
+}
+
+.brand {
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.name {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.type {
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: large;
+}
+
+.price {
+    margin-bottom: 1rem;
+    font-size: 150%;
+}
+
+.size {
+    margin-bottom: 1rem;
+    font-size: 120%;
+}
+
+.select {
+    margin-bottom: 2rem;
+    background-color: white;
+    color: black;
+    border: 12.8px solid transparent;
+    border-color: transparent transparent transparent transparent;
+}
+
+.button {
+    padding: 10px 25px;
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 100%;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.897);
+    color: white;
+}
+
+@media screen and (max-width: 1440px) {
+    .container {
+        font-size: 80%;
+        margin-top: 17%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        position: relative;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -10rem;
+    }
+
+}
