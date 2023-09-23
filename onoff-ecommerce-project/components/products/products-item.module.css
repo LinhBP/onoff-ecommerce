@@ -40,12 +40,36 @@
     text-transform: uppercase;
 }
 
+.content__price_parent {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.content__price_before {
+    text-decoration: line-through;
+    margin-top: 0.5rem;
+    font-size: 90%;
+    margin-bottom: 2rem;
+    color: grey;
+    letter-spacing: 1.5px;
+
+}
+
 .content__price {
     margin-top: 0.5rem;
     font-size: 90%;
     margin-bottom: 2rem;
     color: grey;
     letter-spacing: 1.5px;
+}
+
+.content_sale_percent {
+    font-size: 80%;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgb(0, 125, 72);
 }
 
 @media screen and (max-width: 1024px) {}

@@ -5,7 +5,6 @@ import ProductsBanner from '../../components/products/products-banner'
 import BrandsDescription from '../../components/brands-details/brands-description';
 import BrandsHeader from '../../components/brands-details/brands-header';
 import ProductsList from '../../components/products/products-list';
-import ProductsListCustom from '../../components/products/products-list-custom';
 
 
 
@@ -25,7 +24,7 @@ const BrandDetailedPage = () => {
             <ProductsBanner />
             <BrandsDescription brand={id} />
             <BrandsHeader brand={id} />
-            <ProductsListCustom brandId={id} />
+            <ProductsList brandId={id} />
         </>
     )
 }

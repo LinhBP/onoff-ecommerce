@@ -1,36 +1,18 @@
 import React, { useEffect } from 'react';
-import ProductsItem from './products-item'
+import ProductSaleItem from './product-sale-item'
 import classes from './products-list.module.css'
 import InfiniteScroll from "react-infinite-scroll-component";
 
 
-const ProductsListCustom = (props) => {
-    // const { products, brandId } = props
-    const { brandId } = props
+const SalesList = (props) => {
     const [products, setProducts] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
     const [page, setPage] = React.useState(1);
 
-    const fetchDataWithBrand = async () => {
-        try {
-            const linkFetchData = `${process.env.NEXT_PUBLIC_API_URL}/api/brands/${brandId}/?page=${page}&limit=10`
-            setIsLoading(true);
-            fetch(linkFetchData).then(response => response.json())
-                .then(jsonData => {
-                    setProducts((prev) => {
-                        return [...prev, ...jsonData]
-                    });
-                })
-        } catch (error) {
 
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
-    const fetchDataWithProducts = async () => {
+    const fetchProductsSales = async () => {
         try {
-            const linkFetchData = `${process.env.NEXT_PUBLIC_API_URL}/api/products/?page=${page}&limit=10`
+            const linkFetchData = `${process.env.NEXT_PUBLIC_API_URL}/api/products/?page=${page}&limit=16&sale=true`
             setIsLoading(true);
             fetch(linkFetchData).then(response => response.json())
                 .then(jsonData => {
@@ -46,12 +28,9 @@ const ProductsListCustom = (props) => {
     };
 
     useEffect(() => {
-        if (brandId) {
-            fetchDataWithBrand();
-        } else {
-            fetchDataWithProducts();
-        }
-    }, [page, brandId]);
+        fetchProductsSales();
+
+    }, [page]);
 
 
     const observerTarget = React.useRef(null);
@@ -81,7 +60,7 @@ const ProductsListCustom = (props) => {
         <>
             <ul className={classes.list}>
                 {products.map((product, productIndex) =>
-                    <ProductsItem
+                    <ProductSaleItem
                         key={product.productIndex}
                         ShoesID={product.shoesid}
                         Name={product.name}
@@ -92,6 +71,8 @@ const ProductsListCustom = (props) => {
                         Gender={product.gender}
                         Price={product.price}
                         ImageLink={product.image}
+                        PriceBeforeSale={product.price_before_sale}
+                        SalePercent={product.percent_sale}
                     />
                 )
                 }
@@ -103,4 +84,4 @@ const ProductsListCustom = (props) => {
     )
 }
 
-export default ProductsListCustom
+export default SalesList

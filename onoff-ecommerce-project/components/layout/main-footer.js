@@ -46,22 +46,22 @@ function MainFooter() {
                     </div>
                 </div>
                 <div className={classes["footer-item"]}>
-                    <h4>Quick Links</h4>
+                    <h4>GET HELP</h4>
                     <div className={classes["footer-link"]}>
                         <Link href="/">
-                            <a className={classes["link"]}>Adidas Experience</a>
+                            <a className={classes["link"]}>Order Status</a>
                         </Link>
                         <Link href="/">
-                            <a className={classes["link"]}>Nike Discover</a>
+                            <a className={classes["link"]}>Delivery</a>
                         </Link>
                         <Link href="/">
-                            <a className={classes["link"]}>Get Into Puma</a>
+                            <a className={classes["link"]}>Returns</a>
                         </Link>
                         <Link href="/">
-                            <a className={classes["link"]}>Timberland Show</a>
+                            <a className={classes["link"]}>Payment Options</a>
                         </Link>
                         <Link href="/">
-                            <a className={classes["link"]}>Jordans Kicks</a>
+                            <a className={classes["link"]}>Contact Us</a>
                         </Link>
                     </div>
                 </div>

@@ -26,6 +26,13 @@ const MainHeader = () => {
                             Brands
                         </li >
                     </Link>
+
+                    <Link href="/sales">
+                        <li >
+                            Sales
+                        </li>
+                    </Link>
+
                     <Link href="/products">
                         <li >
                             Products

@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Carousel from 'react-elastic-carousel'
 import Item from './preview-item.js'
 import classes from './preview.module.css'
@@ -16,54 +16,40 @@ const breakPoints = [
     { width: 1200, itemsToShow: 4 },
 ];
 
-const sneakers = [
-    {
-        id: 1, name: "item1", img: 'images/lux/1.jpg'
-    },
-    {
-        id: 2, name: "item1", img: 'images/lux/3.jpg'
-    },
-    {
-        id: 3, name: "item1", img: 'images/lux/12.jpg'
-    },
-    {
-        id: 4, name: "item1", img: 'images/lux/4.jpg'
-    },
-    {
-        id: 5, name: "item1", img: 'images/lux/5.jpg'
-    },
-    {
-        id: 6, name: "item1", img: 'images/lux/6.jpg'
-    },
-    {
-        id: 7, name: "item1", img: 'images/lux/7.jpg'
-    },
-    {
-        id: 8, name: "item1", img: 'images/lux/8.jpg'
-    },
-    {
-        id: 9, name: "item1", img: 'images/lux/9.jpg'
-    },
-    {
-        id: 10, name: "item1", img: 'images/lux/10.jpg'
-    },
-    {
-        id: 11, name: "item1", img: 'images/lux/11.jpg'
-    },
-    {
-        id: 12, name: "item1", img: 'images/lux/2.jpg'
-    },
-]
-
 const Preview = (props) => {
+
+    const [sneakers, setSneakers] = React.useState([]);
+    const fetchDataWithProducts = async () => {
+        try {
+            const linkFetchData = `${process.env.NEXT_PUBLIC_API_URL}/api/products/?page=1&limit=10`
+            fetch(linkFetchData).then(response => response.json())
+                .then(jsonData => {
+                    console.log("🚀 ~ file: preview.js:27 ~ fetchDataWithProducts ~ jsonData:", jsonData)
+                    setSneakers((prev) => {
+                        return [...prev, ...jsonData]
+                    });
+                })
+        } catch (error) {
+
+        }
+    };
+
+
     useEffect(() => {
         Aos.init({ duration: 500 });
     }, [])
+
+    useEffect(() => {
+        fetchDataWithProducts();
+    }
+        , []);
+
+
     return (
         <section data-aos="fade-up" className={classes.section}>
             <div className={classes.header}>
                 <div>
-                    <h1 className={classes.title}>Incoming Arrivals</h1>
+                    <h1 className={classes.title}>New Arrivals</h1>
                 </div>
 
             </div>
@@ -78,7 +64,8 @@ const Preview = (props) => {
                     <Item
                         key={item.id}
                         name={item.name}
-                        src={item.img}
+                        src={item.image}
+                        shoesid={item.shoesid}
                     />
                 )}
             </Carousel>

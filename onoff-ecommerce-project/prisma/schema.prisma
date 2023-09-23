@@ -41,16 +41,18 @@ model customer {
 
 model shoes {
   shoesid             Int                   @id @default(autoincrement())
-  name                String?               @db.VarChar(40)
+  name                String?               @db.VarChar(200)
   brand               String?               @db.VarChar(20)
-  size                String?               @db.Text()
+  size                String?
   color               String?               @db.VarChar(200)
-  type                String?               @db.Text()
-  gender              String?               @db.Text()
+  type                String?
+  gender              String?
   price               Decimal?              @db.Decimal(10, 2)
-  image               String?               @db.Text()
+  image               String?
   stripeid            String?               @db.VarChar
-  detail              String?               @db.Text()
+  detail              String?
+  percent_sale        Int?
+  price_before_sale   Decimal?              @db.Decimal(10, 2)
   billdetail          billdetail[]
   related_image_shoes related_image_shoes[]
 }
