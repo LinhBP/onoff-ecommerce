@@ -9,7 +9,6 @@ const ProductsItem = (props) => {
     const {
         ShoesID,
         Name,
-        Brand,
         Size,
         Color,
         Type,
@@ -18,8 +17,6 @@ const ProductsItem = (props) => {
         ImageLink,
     } = props;
 
-    const imageLinkIsHttps = ImageLink.includes("https://");
-    const srcRenderImage = imageLinkIsHttps ? ImageLink : ImageLink + ".jpg";
 
     useEffect(() => {
         Aos.init({ duration: 1000 });
@@ -30,10 +27,9 @@ const ProductsItem = (props) => {
             <Link href={`/products/${ShoesID}`}>
                 <li className={classes.item} key={ShoesID}>
                     <div >
-                        <Image className={classes.image} src={srcRenderImage} alt={Name} width={280} height={280} />
+                        <Image className={classes.image} src={ImageLink} alt={Name} width={280} height={280} />
                     </div>
                     <div className={classes.content__container}>
-                        <p className={classes.content__brand}>{Brand}</p>
                         <a className={classes.content__name}>{Name}</a>
                         <p className={classes.content__price}>{"$" + Price}</p>
                     </div>

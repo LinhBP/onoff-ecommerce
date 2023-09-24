@@ -15,9 +15,8 @@ const FeaturedSneaker = () => {
         <>
             <div data-aos="fade-left" className={classes.container}>
                 <div className={classes.description}>
-                    <h1>Nike Wommen</h1>
+                    <h1>For Wommen</h1>
                     <p>Whether you’re wearing casual, party, or formal outfits, the right types of footwear are crucial to nail the perfect look.
-                        The wide variety of ladies' shoes in different types, colors, and materials is sure to leave you spoilt for choice.
                     </p>
                     <Link href="./products?gender=female">
                         <button>Buy Now <FontAwesomeIcon icon={faArrowRight} /></button>
@@ -37,8 +36,8 @@ const FeaturedSneaker = () => {
                     </div>
                 </Link>
                 <div className={classes.description}>
-                    <h1>Nike Men</h1>
-                    <p>Discover our men's shoes with ASOS. Our range of men's footwear include trendy loafers, casual and smart shoes, trainers and other styles.
+                    <h1>For men</h1>
+                    <p>
                         Discover our men's shoes with us. Our range of men's footwear include trendy loafers, casual and smart shoes, trainers and other styles.
                     </p>
                     <Link href='./products?gender=male'>

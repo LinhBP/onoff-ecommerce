@@ -11,6 +11,12 @@
 .body__title {
     margin-bottom: 16px;
     font-size: 250%;
+    text-align: center;
+}
+
+.body__title__first {
+    font-size: 100px;
+    text-align: center;
 }
 
 .body__content {

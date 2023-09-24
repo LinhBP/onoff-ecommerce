@@ -17,7 +17,7 @@ const ContactBanner = () => {
               <h2>Hanoi, Vietnam</h2>
             </div>
             <div className={classes.subtitle}>
-              <p>Tran Dai Nghia Street</p>
+              <p>Giai Phong Street</p>
             </div>
           </div>
         </div>
@@ -31,8 +31,8 @@ const ContactBanner = () => {
               <h2>Contacts</h2>
             </div>
             <div className={classes.subtitle}>
-              <p>Phone: 0966 244 758</p>
-              <p>Email: nam.lg205004@sis.hust.edu.vn</p>
+              <p>Phone: 0363 462 808</p>
+              <p>Email: onoffshoes@gmail.com</p>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ const ContactBanner = () => {
               <h2>Social Media</h2>
             </div>
             <div className={classes.subtitle}>
-              <p>Facebook: Le Giang Nam</p>
+              <p>Facebook: ONOFF SHOES</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import useSWR from 'swr'
-import ProductsBanner from '../../components/products/products-banner';
+import SalesBanner from '../../components/products/sales-banner';
 import ProductsDescription from '../../components/products/products-description';
 import SalesList from '../../components/products/sales-list';
 
@@ -10,7 +10,7 @@ const Sales = (props) => {
     if (!data) return <div>Loading ...</div>
     return (
         <>
-            <ProductsBanner />
+            <SalesBanner />
             <ProductsDescription />
             <SalesList />
         </>

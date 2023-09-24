@@ -64,7 +64,6 @@ const SalesList = (props) => {
                         key={product.productIndex}
                         ShoesID={product.shoesid}
                         Name={product.name}
-                        Brand={product.brand}
                         Size={product.size}
                         Color={product.color}
                         Type={product.type}

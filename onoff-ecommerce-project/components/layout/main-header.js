@@ -21,9 +21,9 @@ const MainHeader = () => {
                         </div>
                     </Link>
 
-                    <Link href="/brands">
+                    <Link href="/for-you">
                         <li >
-                            Brands
+                            For you
                         </li >
                     </Link>
 

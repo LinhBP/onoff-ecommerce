@@ -6,7 +6,7 @@ import { ShoppingCartContextProvider } from '../store/shopping-cart-context';
 function MyApp({ Component, pageProps }) {
   return (
     <ShoppingCartContextProvider>
-      <title>ONOFF - a Sneaker shop website</title>
+      <title>ONOFF</title>
       <Layout>
         <NextNProgress color="#808080" />
         <Component {...pageProps} />

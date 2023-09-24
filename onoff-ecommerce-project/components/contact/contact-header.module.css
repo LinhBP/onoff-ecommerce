@@ -1,10 +1,10 @@
 .header {
-  background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.1)
-    ),
-    url("/images/hero/hero4.jpg");
+  background-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)),
+    /* url("/images/hero/hero4.jpg"); */
+    url("https://static.nike.com/a/images/w_1920,c_limit,f_auto/badba08f-3424-441b-89fc-febc47fdd6e7/air-jordan-1-next-chapter-dv1748-601-release-date.png");
+
   height: 50vh;
   background-position: center;
   background-size: cover;

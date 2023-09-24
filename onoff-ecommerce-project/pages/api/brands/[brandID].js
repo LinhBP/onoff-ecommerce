@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 
 export default async function getProduct(req, res) {
 
-    const brandID = req.query.brandID;
+    const for-youID = req.query.for - youID;
 
     const { page, limit } = req.query;
 
@@ -20,7 +20,7 @@ export default async function getProduct(req, res) {
     const getProduct = await prisma.shoes.findMany(
         {
             where: {
-                brand: brandID,
+                for-you: for-youID,
             },
             skip,
             take: parsedLimit,

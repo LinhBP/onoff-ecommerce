@@ -6,36 +6,22 @@ import { useRouter } from 'next/router'
 
 
 const ProductsList = (props) => {
-    // const { products, brandId } = props
-    const { brandId } = props
+    // const { products, for-youId } = props
+
     const router = useRouter()
     const query = router.query
-    const { gender } = query
+    const { gender, categoryId } = query
     const [products, setProducts] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
     const [page, setPage] = React.useState(1);
-
-    const fetchDataWithBrand = async () => {
-        try {
-            const linkFetchData = `${process.env.NEXT_PUBLIC_API_URL}/api/brands/${brandId}/?page=${page}&limit=10`
-            setIsLoading(true);
-            fetch(linkFetchData).then(response => response.json())
-                .then(jsonData => {
-                    setProducts((prev) => {
-                        return [...prev, ...jsonData]
-                    });
-                })
-        } catch (error) {
-
-        } finally {
-            setIsLoading(false);
-        }
-    };
 
 
     const fetchDataWithProducts = async () => {
         try {
             let linkFetchData = `${process.env.NEXT_PUBLIC_API_URL}/api/products/?page=${page}&limit=16`
+            if (categoryId) {
+                linkFetchData += `&categoryId=${categoryId}`
+            }
             if (gender) {
                 linkFetchData += `&gender=${gender}`
             }
@@ -54,12 +40,8 @@ const ProductsList = (props) => {
     };
 
     useEffect(() => {
-        if (brandId) {
-            fetchDataWithBrand();
-        } else {
-            fetchDataWithProducts();
-        }
-    }, [page, brandId]);
+        fetchDataWithProducts();
+    }, [page]);
 
 
     const observerTarget = React.useRef(null);
@@ -93,7 +75,6 @@ const ProductsList = (props) => {
                         key={product.productIndex}
                         ShoesID={product.shoesid}
                         Name={product.name}
-                        Brand={product.brand}
                         Size={product.size}
                         Color={product.color}
                         Type={product.type}

@@ -20,7 +20,7 @@ const ProductsHeader = () => {
                         <li key={`PRICE`}><FontAwesomeIcon className={classes.header__icon} icon={faCaretDown} />PRICE</li>
                         <li key={`GENDER`}><FontAwesomeIcon className={classes.header__icon} icon={faCaretDown} />GENDER</li>
                         <li key={`SIZE`}><FontAwesomeIcon className={classes.header__icon} icon={faCaretDown} />SIZE</li>
-                        <li key={`BRAND`}><FontAwesomeIcon className={classes.header__icon} icon={faCaretDown} />BRAND</li>
+                        <li key={`for-you`}><FontAwesomeIcon className={classes.header__icon} icon={faCaretDown} />for-you</li>
                     </ul>
                 </div>
             </div>
