@@ -24,7 +24,7 @@ const FeaturedSneaker = () => {
                 </div>
                 <Link href="./products?gender=female">
                     <div className={classes.image}>
-                        <Image width='703' height='497' src="/images/Featured/1.png" alt="" />
+                        <Image width='703' height='497' src="/images/Featured/women.png" alt="" />
                     </div>
                 </Link>
             </div>
@@ -32,7 +32,7 @@ const FeaturedSneaker = () => {
             <div data-aos="fade-right" className={classes.container}>
                 <Link href='./products?gender=male'>
                     <div className={classes.image}>
-                        <Image width='703' height='497' src="/images/Featured/2.png" alt="" />
+                        <Image width='703' height='497' src="/images/Featured/men.png" alt="" />
                     </div>
                 </Link>
                 <div className={classes.description}>
