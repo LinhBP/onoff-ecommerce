@@ -1,6 +1,6 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import create_engine, Column, String, Integer, Numeric, ForeignKey
+from sqlalchemy import create_engine, Column, String, Integer, Numeric, ForeignKey, func
 import os
 from dotenv import load_dotenv
 import json
@@ -55,16 +55,18 @@ class Shoes(Base):
     __tablename__ = 'shoes'
 
     shoesid = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(40))
+    name = Column(String(200))
     brand = Column(String(20))
     size = Column(String(10))
-    color = Column(String(40))
+    color = Column(String(200))
     type = Column(String(10))
     gender = Column(String(10))
     image = Column(String(100))
     stripeid = Column(String)
-    detail = Column(String(100))
+    detail = Column(String(64000))
     price = Column(Numeric(10, 2))
+    price_before_sale = Column(Numeric(10, 2))
+    percent_sale = Column(Integer)
 
     billdetail = relationship("BillDetail", back_populates="shoes")
     related_image_shoes = relationship(
@@ -93,7 +95,9 @@ class PostgresSqlDB():
         for item in data:
             existing_shoes = self.session.query(Shoes).filter(
                 Shoes.name == item['name']).first()
-
+            # import pdb
+            # pdb.set_trace()\
+            max_shoesid = self.session.query(func.max(Shoes.shoesid)).scalar()
             if existing_shoes:
                 # Update the existing record with other attributes
                 for key, value in item.items():
@@ -103,18 +107,21 @@ class PostgresSqlDB():
                         print('value', value)
                     if key == "price":
                         # Convert price to floating-point number
-                        value = float(value/24000)
+                        value = float(value)
                     setattr(existing_shoes, key, value)
+                    self.session.add(existing_shoes)
 
             else:
                 # Create a new record with all attributes
+                print('123123')
                 imgs_related = item['imgs_related']
                 del item['imgs_related']
 
                 new_shoe = Shoes(**item)
+                new_shoe.shoesid = max_shoesid + 1
+                max_shoesid += 1
                 shoes_sizes = item['size']
-                new_shoe = ", ".join(shoes_sizes)
-
+                new_shoe.size = ", ".join(shoes_sizes)
                 # Handle related images
                 for img_url in imgs_related:
                     print('img_url', img_url)
@@ -124,6 +131,7 @@ class PostgresSqlDB():
                 name = new_shoe.name
                 image_of_shoe = new_shoe.image
                 price = new_shoe.price
+                new_shoe.price = price
                 description = new_shoe.detail
                 product = self.stripe.upload_product(
                     name, image_of_shoe, price, description)
