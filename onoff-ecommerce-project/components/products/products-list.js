@@ -36,7 +36,7 @@ const ProductsList = (props) => {
     const fetchDataWithProducts = async () => {
         try {
             let linkFetchData = `${process.env.NEXT_PUBLIC_API_URL}/api/products/?page=${page}&limit=16`
-            if (gender !== '') {
+            if (gender) {
                 linkFetchData += `&gender=${gender}`
             }
             setIsLoading(true);
