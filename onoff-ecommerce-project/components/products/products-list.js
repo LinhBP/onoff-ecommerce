@@ -2,11 +2,15 @@ import React, { useEffect } from 'react';
 import ProductsItem from './products-item'
 import classes from './products-list.module.css'
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useRouter } from 'next/router'
 
 
 const ProductsList = (props) => {
     // const { products, brandId } = props
     const { brandId } = props
+    const router = useRouter()
+    const query = router.query
+    const { gender } = query
     const [products, setProducts] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
     const [page, setPage] = React.useState(1);
@@ -28,9 +32,13 @@ const ProductsList = (props) => {
         }
     };
 
+
     const fetchDataWithProducts = async () => {
         try {
-            const linkFetchData = `${process.env.NEXT_PUBLIC_API_URL}/api/products/?page=${page}&limit=16`
+            let linkFetchData = `${process.env.NEXT_PUBLIC_API_URL}/api/products/?page=${page}&limit=16`
+            if (gender !== '') {
+                linkFetchData += `&gender=${gender}`
+            }
             setIsLoading(true);
             fetch(linkFetchData).then(response => response.json())
                 .then(jsonData => {

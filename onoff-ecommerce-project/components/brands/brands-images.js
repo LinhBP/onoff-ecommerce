@@ -1,8 +1,13 @@
 import { useEffect } from "react";
-import classes from "./brands-images.module.css";
+// import classes from "./brands-images.module.css";
+import classes from '../featured-sneaker/featured-sneaker.module.css'
+
 import Link from "next/dist/client/link";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import Image from "next/image";
 
 const BrandsImages = (props) => {
   useEffect(() => {
@@ -13,80 +18,92 @@ const BrandsImages = (props) => {
 
   return (
     <>
-      <div className={classes.gallery}>
-        <figure
-          data-aos="fade-left"
-          className={`${classes.gallery__item} ${classes.gallery__item_1}`}
-        >
-          <Link href="./brands/Converse">
-            <picture>
-              <img
-                src={`/images/brands_logo/${brands[2]}.jpg`}
-                className={classes["gallery__img"]}
-                alt="Image 3"
-              />
-            </picture>
+      <div data-aos="fade-left" className={classes.container}>
+        <div className={classes.description}>
+          <h1>Custom shoes</h1>
+          <p>Whether you’re wearing casual, party, or formal outfits, the right types of footwear are crucial to nail the perfect look.
+            The wide variety of ladies' shoes in different types, colors, and materials is sure to leave you spoilt for choice.
+          </p>
+          <Link href="./products?gender=female">
+            <button>Buy Now <FontAwesomeIcon icon={faArrowRight} /></button>
           </Link>
-        </figure>
-        <figure
-          data-aos="fade-down"
-          className={`${classes.gallery__item} ${classes.gallery__item_2}`}
-        >
-          <Link href="./brands/Adidas">
-            <picture>
-              <img
-                src={`/images/brands_logo/${brands[4]}.jpg`}
-                className={classes["gallery__img"]}
-                alt="Image 2"
-              />
-            </picture>
+        </div>
+        <Link href="./products?gender=female">
+          <div className={classes.image}>
+            <Image width='400' height='497' src="/images/Featured/1.png" alt="" />
+          </div>
+        </Link>
+      </div>
+
+      <div data-aos="fade-right" className={classes.container}>
+        <Link href='./products?gender=male'>
+          <div className={classes.image}>
+            <Image width='703' height='497' src="/images/Featured/2.png" alt="" />
+          </div>
+        </Link>
+        <div className={classes.description}>
+          <h1>Running shoes</h1>
+          <p>Discover our men's shoes with ASOS. Our range of men's footwear include trendy loafers, casual and smart shoes, trainers and other styles.
+            Discover our men's shoes with us. Our range of men's footwear include trendy loafers, casual and smart shoes, trainers and other styles.
+          </p>
+          <Link href='./products?gender=male'>
+            <button>Buy Now <FontAwesomeIcon icon={faArrowRight} /></button>
           </Link>
-        </figure>
-        <figure
-          data-aos="fade-left"
-          className={`${classes.gallery__item} ${classes.gallery__item_3}`}
-        >
-          <Link href="./brands/Comme des Garcons">
-            <picture>
-              <img
-                src={`/images/brands_logo/${brands[1]}.jpg`}
-                className={classes["gallery__img"]}
-                alt="Image 1"
-              />
-            </picture>
+        </div>
+      </div>
+
+      <div data-aos="fade-left" className={classes.container}>
+        <div className={classes.description}>
+          <h1>Jordan shoes</h1>
+          <p>Whether you’re wearing casual, party, or formal outfits, the right types of footwear are crucial to nail the perfect look.
+            The wide variety of ladies' shoes in different types, colors, and materials is sure to leave you spoilt for choice.
+          </p>
+          <Link href="./products?gender=female">
+            <button>Buy Now <FontAwesomeIcon icon={faArrowRight} /></button>
           </Link>
-        </figure>
-        <figure
-          data-aos="fade-right"
-          className={`${classes.gallery__item} ${classes.gallery__item_4}`}
-        >
-          <Link href="./brands/Nike">
-            <picture>
-              <img
-                src={`/images/brands_logo/${brands[3]}.jpg`}
-                className={classes["gallery__img"]}
-                alt="Image 5"
-              />
-            </picture>
+        </div>
+        <Link href="./products?gender=female">
+          <div className={classes.image}>
+            <Image width='703' height='497' src="/images/Featured/test2.png" alt="" />
+          </div>
+        </Link>
+      </div>
+
+      <div data-aos="fade-right" className={classes.container}>
+        <Link href='./products?gender=male'>
+          <div className={classes.image}>
+            <Image width='703' height='497' src="/images/Featured/2.png" alt="" />
+          </div>
+        </Link>
+        <div className={classes.description}>
+          <h1>Gym & Traning shoes</h1>
+          <p>Discover our men's shoes with ASOS. Our range of men's footwear include trendy loafers, casual and smart shoes, trainers and other styles.
+            Discover our men's shoes with us. Our range of men's footwear include trendy loafers, casual and smart shoes, trainers and other styles.
+          </p>
+          <Link href='./products?gender=male'>
+            <button>Buy Now <FontAwesomeIcon icon={faArrowRight} /></button>
           </Link>
-        </figure>
-        <figure
-          data-aos="fade-up"
-          className={`${classes.gallery__item} ${classes.gallery__item_5}`}
-        >
-          <Link href="./brands/Adidas Y-3">
-            <picture>
-              <img
-                src={`/images/brands_logo/${brands[0]}.jpg`}
-                className={classes["gallery__img"]}
-                alt="Image 4"
-              />
-            </picture>
+        </div>
+      </div>
+
+      <div data-aos="fade-left" className={classes.container}>
+        <div className={classes.description}>
+          <h1>Life styles shoes</h1>
+          <p>Whether you’re wearing casual, party, or formal outfits, the right types of footwear are crucial to nail the perfect look.
+            The wide variety of ladies' shoes in different types, colors, and materials is sure to leave you spoilt for choice.
+          </p>
+          <Link href="./products?gender=female">
+            <button>Buy Now <FontAwesomeIcon icon={faArrowRight} /></button>
           </Link>
-        </figure>
+        </div>
+        <Link href="./products?gender=female">
+          <div className={classes.image}>
+            <Image width='703' height='497' src="/images/Featured/1.png" alt="" />
+          </div>
+        </Link>
       </div>
     </>
-  );
+  )
 };
 
 export default BrandsImages;

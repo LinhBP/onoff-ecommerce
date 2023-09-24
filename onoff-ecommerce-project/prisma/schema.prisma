@@ -50,7 +50,7 @@ model shoes {
   price               Decimal?              @db.Decimal(10, 2)
   image               String?
   stripeid            String?               @db.VarChar
-  detail              String?
+  detail              String?               @db.Text
   percent_sale        Int?
   price_before_sale   Decimal?              @db.Decimal(10, 2)
   billdetail          billdetail[]

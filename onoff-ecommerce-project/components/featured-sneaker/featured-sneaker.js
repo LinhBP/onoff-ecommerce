@@ -19,11 +19,11 @@ const FeaturedSneaker = () => {
                     <p>Whether you’re wearing casual, party, or formal outfits, the right types of footwear are crucial to nail the perfect look.
                         The wide variety of ladies' shoes in different types, colors, and materials is sure to leave you spoilt for choice.
                     </p>
-                    <Link href="./brands/Nike">
+                    <Link href="./products?gender=female">
                         <button>Buy Now <FontAwesomeIcon icon={faArrowRight} /></button>
                     </Link>
                 </div>
-                <Link href="./brands/Nike">
+                <Link href="./products?gender=female">
                     <div className={classes.image}>
                         <Image width='703' height='497' src="/images/Featured/1.png" alt="" />
                     </div>
@@ -31,7 +31,7 @@ const FeaturedSneaker = () => {
             </div>
 
             <div data-aos="fade-right" className={classes.container}>
-                <Link href='./brands/Adidas'>
+                <Link href='./products?gender=male'>
                     <div className={classes.image}>
                         <Image width='703' height='497' src="/images/Featured/2.png" alt="" />
                     </div>
@@ -41,7 +41,7 @@ const FeaturedSneaker = () => {
                     <p>Discover our men's shoes with ASOS. Our range of men's footwear include trendy loafers, casual and smart shoes, trainers and other styles.
                         Discover our men's shoes with us. Our range of men's footwear include trendy loafers, casual and smart shoes, trainers and other styles.
                     </p>
-                    <Link href='./brands/Adidas'>
+                    <Link href='./products?gender=male'>
                         <button>Buy Now <FontAwesomeIcon icon={faArrowRight} /></button>
                     </Link>
                 </div>

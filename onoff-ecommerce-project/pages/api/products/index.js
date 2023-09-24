@@ -3,7 +3,7 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
 export default async function getAllSneakers(req, res) {
-    const { page, limit, sale = false } = req.query;
+    const { page, limit, sale = false, gender = '' } = req.query;
 
     const parsedPage = parseInt(page, 10) || 1;
     const parsedLimit = parseInt(limit, 10) || 10;
@@ -14,12 +14,14 @@ export default async function getAllSneakers(req, res) {
         const findManyOptions = {
             skip,
             take: parsedLimit,
+            where: {}
         };
 
         if (sale) {
-            findManyOptions.where = {
-                price_before_sale: { not: null }
-            };
+            findManyOptions.where['price_before_sale'] = { not: null }
+        }
+        if (gender !== '') {
+            findManyOptions.where['gender'] = gender
         }
 
         const getAllSneakers = await prisma.shoes.findMany(findManyOptions);

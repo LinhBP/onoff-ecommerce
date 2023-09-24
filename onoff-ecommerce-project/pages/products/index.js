@@ -7,6 +7,7 @@ import ProductsList from '../../components/products/products-list';
 
 const Products = (props) => {
     const { data, error } = useSWR('api/products', (url) => fetch(url).then(res => res.json()));
+
     if (error) return <div>An error occured.</div>
     if (!data) return <div>Loading ...</div>
     return (
