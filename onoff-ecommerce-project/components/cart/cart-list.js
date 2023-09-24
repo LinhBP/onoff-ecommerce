@@ -1,4 +1,4 @@
-import  { useContext } from 'react'
+import { useContext } from 'react'
 import classes from "./cart-list.module.css"
 import ShoppingCartContext from '../../store/shopping-cart-context'
 import CartItem from './cart-item';
@@ -20,7 +20,7 @@ const CartList = () => {
                         <p>Delete</p>
                     </li>
                     <h2 className={classes.empty}>
-                        There are not any products yet !!~
+                        There are no items in your bag.
                     </h2>
                 </ul>
             </>

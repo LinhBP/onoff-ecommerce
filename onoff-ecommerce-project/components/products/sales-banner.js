@@ -4,8 +4,7 @@ const SalesBanner = () => {
     return (
         <>
             <div className={classes.header__container}>
-                <b className={classes.header__title}>BACK-TO-SCHOOL SEASON
-                    SALES UP TO 40%
+                <b className={classes.header__title}>Free Standard Delivery & 30-Day Free Returns
                 </b>
             </div>
         </>

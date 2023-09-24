@@ -1,7 +1,7 @@
 import React from 'react'
 import useSWR from 'swr'
 import SalesBanner from '../../components/products/sales-banner';
-import ProductsDescription from '../../components/products/products-description';
+import SalesDescription from '../../components/products/sales-description';
 import SalesList from '../../components/products/sales-list';
 
 const Sales = (props) => {
@@ -11,7 +11,7 @@ const Sales = (props) => {
     return (
         <>
             <SalesBanner />
-            <ProductsDescription />
+            <SalesDescription />
             <SalesList />
         </>
     )
