@@ -41,13 +41,14 @@ Discover the power of real data and explore the world of renowned brands like ne
 ### Latest features
 
 - Auto crawl data from e-commerce page/brand like Nike-Aidas
-- Fetch and show all products and brands
-- Fetch and show detail of each product and each brand
+- Fetch and show all product
+- Fetch and show detail of each product and products categorized by gender, style and price on sales
 - Add products to cart
 - Send feedbacks and customers's information
 - Show featured sneakers, sneakers carousel
 - Validate form
-- Payments method - Stripe 
+- Payments method - Stripe
+- Included features to help customers find the right pair of shoes at ease and have the best shopping experience
 
 ### Features to be implemented in the near future
 
