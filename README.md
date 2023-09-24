@@ -12,6 +12,7 @@
 ## Project Overview <a name="project-overview"></a>
 
 Data plays a pivotal role in today's projects. In this project, I directly utilize data sourced from renowned brands such as Adidas, Nike, and more. Instead of relying on pre-existing datasets painstakingly crafted by hand, crawling data offers us a more comprehensive and authentic perspective.
+You can see live demo at: [onoff-ecommerce.aiotlab-annotation.com](https://onoff-ecommerce.aiotlab-annotation.com/)
 
 ### Key Highlights
 
