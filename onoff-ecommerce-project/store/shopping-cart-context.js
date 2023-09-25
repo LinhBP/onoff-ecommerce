@@ -16,6 +16,7 @@ export function ShoppingCartContextProvider(props) {
 
         if (check) {
             setCart([...cart, { ...product }]);
+            alert("Add item successfull");
         } else {
             alert("Item has been added to the cart");
         }
