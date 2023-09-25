@@ -92,7 +92,7 @@ const ProductsCard = (props) => {
         <div>
             {isElementHidden ? (<></>) : (
                 <div id="hide" data-aos="fade-up" className={classes.container}>
-                    <h2 className={classes.for - you}>{data.for - you}</h2>
+                    <h2 className={classes.brand}>{data.brand}</h2>
                     <h2 className={classes.name}>{data.name}</h2>
                     <h3 className={classes.type}>{data.detail}</h3>
                     <h3 className={classes.type}>{data.gender} {data.type}</h3>
