@@ -37,14 +37,14 @@ const ForYouImages = (props) => {
       </div>
 
       <div data-aos="fade-left" className={classes.container}>
-        <Link href="./products?categoryId=1">
+        <Link href="./products?categoryId=4">
           <div className={classes.image}>
-            <Image width='600' height='497' src="/images/Featured/4.png" alt="" />
+            <Image width='582' height='497' src="/images/Featured/4.png" alt="" />
           </div>
         </Link>
-        <Link href="./products?categoryId=3">
+        <Link href="./products?categoryId=5">
           <div className={classes.image}>
-            <Image width='600' height='497' src="/images/Featured/5.png" alt="" />
+            <Image width='582' height='497' src="/images/Featured/5.png" alt="" />
           </div>
         </Link>
       </div>
