@@ -154,35 +154,17 @@ class PostgresSqlDB():
             price = shoe.price
             name = shoe.name
             description = shoe.detail
-            included_images = image_of_shoe.find('/images/')
-            if included_images == 0:
-                link_stored = f'C:/Users/20184040/code/jf_bpl/onoff-ecommerce-project/public{image_of_shoe}.jpg'
-                file_name = link_stored.split('/')[-1]
-                dst_file = f'./images/{file_name}'
-                # shutil.copyfile(link_stored, dst_file)
-                try:
-                    image_url = f'https://minio.hisoft.com.vn/anhtn/stripe/{file_name}'
-                    product = self.stripe.upload_product(
-                        name, image_url, price, description)
-                    stripeid = product.default_price
-                    shoe.stripeid = stripeid
-                    self.session.add(shoe)
-                    print(f"Product created with ID: {product.id}")
-                except self.stripe.stripe.error.StripeError as e:
-                    # Handle errors
-                    print(f"Error: {e}")
-            else:
-                try:
-                    image_url = shoe.image
-                    product = self.stripe.upload_product(
-                        name, image_url, price, description)
-                    stripeid = product.default_price
-                    shoe.stripeid = stripeid
-                    self.session.add(shoe)
-                    print(f"Product created with ID: {product.id}")
-                except self.stripe.stripe.error.StripeError as e:
-                    # Handle errors
-                    print(f"Error: {e}")
+            try:
+                image_url = shoe.image
+                product = self.stripe.upload_product(
+                    name, image_url, price, description)
+                stripeid = product.default_price
+                shoe.stripeid = stripeid
+                self.session.add(shoe)
+                print(f"Product created with ID: {product.id}")
+            except self.stripe.stripe.error.StripeError as e:
+                # Handle errors
+                print(f"Error: {e}")
         self.session.commit()
 
 
