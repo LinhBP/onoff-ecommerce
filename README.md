@@ -52,6 +52,7 @@ Discover the power of real data and explore the world of renowned brands like ne
 
 ### Features to be implemented in the near future
 
+- Python Crontab
 - Login Authentication
 - Voice-enabled online shopping
 - Integrating shoppable videos
